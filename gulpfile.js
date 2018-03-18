@@ -1,17 +1,17 @@
 var gulp = require('gulp'),
-  	sass = require('gulp-sass'),
-  	useref = require('gulp-useref'),
-  	uglify = require('gulp-uglify'),
-  	browserSync = require('browser-sync'),
-  	gulpif = require('gulp-if'),
-  	cleancss = require('gulp-clean-css'),
+    sass = require('gulp-sass'),
+    useref = require('gulp-useref'),
+    uglify = require('gulp-uglify'),
+    browserSync = require('browser-sync'),
+    gulpif = require('gulp-if'),
+    cleancss = require('gulp-clean-css'),
     uncss = require('gulp-uncss'),
     nano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
-  	imagemin = require('gulp-imagemin'),
-  	cache = require('gulp-cache'),
-  	del = require('del'),
-  	runSequence = require('run-sequence');
+    imagemin = require('gulp-imagemin'),
+    cache = require('gulp-cache'),
+    del = require('del'),
+    runSequence = require('run-sequence');
     pngquant    = require('imagemin-pngquant');
 
 

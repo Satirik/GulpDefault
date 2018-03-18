@@ -3,27 +3,32 @@
 <head>
 <title>Мой первый проект на Gulp</title>
 <!--build:css css/styles.min.css-->
+<link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/my.css">
 <!--endbuild-->
 </head>
 
 <body>
+	<div class="container">
 
-<h1>Hello Gulp! Это моя первая страница через Gulp!</h1>
-<h2>Настройка Gulp...</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et officiis inventore numquam sint laborum in eaque dicta cumque, vero perferendis dolorem sed aliquid accusamus iusto voluptas temporibus, eius ratione adipisci ipsam. Distinctio tenetur esse dolore expedita molestias obcaecati, quisquam recusandae repudiandae cumque reprehenderit placeat commodi voluptates deleniti, sunt explicabo nulla eligendi facere, eos, amet! Quas a, quod temporibus odio provident similique, error architecto repellendus quia non impedit quibusdam sint suscipit ullam modi consequatur accusamus facere? Blanditiis assumenda in, obcaecati sint repudiandae aperiam sapiente veniam magnam pariatur, velit quaerat dolore perferendis nemo enim, explicabo maxime amet cum officiis. Aliquid consectetur, asperiores.</p>
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Gallery</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">About</a>
+  </li>
+</ul>
+</div>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
 <!--build:js js/main.min.js -->
-<script src="js/lib/1.js"></script>
-<script src="js/lib/2.js"></script>
 <script src="js/main.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>
 <!-- endbuild -->
 </body>
 </html>
