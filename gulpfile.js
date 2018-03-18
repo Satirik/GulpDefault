@@ -5,15 +5,11 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     gulpif = require('gulp-if'),
     cleancss = require('gulp-clean-css'),
-    uncss = require('gulp-uncss'),
-    nano = require('gulp-cssnano'),
-    concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache'),
     del = require('del'),
     runSequence = require('run-sequence');
     pngquant    = require('imagemin-pngquant');
-
 
 
 // SCSS to CSS
