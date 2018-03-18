@@ -27,6 +27,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-uncss": "^1.0.6",
     "gulp-useref": "^3.1.5",
+    "imagemin-pngquant": "^5.1.0",
     "run-sequence": "^2.2.1"
   },
   "dependencies": {

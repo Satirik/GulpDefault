@@ -1,26 +1,18 @@
 var gulp = require('gulp'),
-	sass = require('gulp-sass'),
-	useref = require('gulp-useref'),
-	uglify = require('gulp-uglify'),
-	browserSync = require('browser-sync'),
-	gulpif = require('gulp-if'),
-	cleancss = require('gulp-clean-css'),
-  uncss = require('gulp-uncss'),
-  nano = require('gulp-cssnano'),
-  concat = require('gulp-concat'),
-	imagemin = require('gulp-imagemin'),
-	cache = require('gulp-cache'),
-	del = require('del'),
-	runSequence = require('run-sequence');
-
-
-
-
- 
-
-
-
-
+  	sass = require('gulp-sass'),
+  	useref = require('gulp-useref'),
+  	uglify = require('gulp-uglify'),
+  	browserSync = require('browser-sync'),
+  	gulpif = require('gulp-if'),
+  	cleancss = require('gulp-clean-css'),
+    uncss = require('gulp-uncss'),
+    nano = require('gulp-cssnano'),
+    concat = require('gulp-concat'),
+  	imagemin = require('gulp-imagemin'),
+  	cache = require('gulp-cache'),
+  	del = require('del'),
+  	runSequence = require('run-sequence');
+    pngquant    = require('imagemin-pngquant');
 
 
 
@@ -57,15 +49,17 @@ gulp.task('useref', function(){
 });
 
 //Минимизируем изображение
-gulp.task('images', function(){
-  return gulp.src('app/img/**/*.+(png|jpg|jpeg|gif|svg)')
-  // кэширование изображений, прошедших через imagemin
-  .pipe(cache(imagemin({
- interlaced: true
- })))
-  .pipe(gulp.dest('dist/img'))
+gulp.task('images', function() {
+  return gulp.src('app/img/**/*') // Берем все изображения из app
+    .pipe(cache(imagemin({ // С кешированием
+    // .pipe(imagemin({ // Сжимаем изображения без кеширования
+      interlaced: true,
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))/**/)
+    .pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
 });
-
 //Копируем шрифты
 gulp.task('fonts', function() {
   return gulp.src('app/fonts/**/*')
@@ -94,17 +88,4 @@ gulp.task('default', function (callback) {
   	['sass','browserSync'],
   	'watch',
  callback )
-});
-
-
-
-gulp.task('default2', function () {
-    return gulp.src('app/scss/**/*.scss')
-        .pipe(sass())
-        .pipe(concat('main.css'))
-        .pipe(uncss({
-            html: ['app/index.html']
-        }))
-        .pipe(nano())
-        .pipe(gulp.dest('dist/css2'));
 });
